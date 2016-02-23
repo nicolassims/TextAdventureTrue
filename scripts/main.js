@@ -6,3 +6,4 @@
 
 'use strict';
 
+import ClickHandler from './ClickHandler.js';

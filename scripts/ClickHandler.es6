@@ -4,12 +4,10 @@
 
 export default class ClickHandler {
     constructor() {
-        document.getElementById("beginButton").addEventListener("click", function() {
-            ClickHandler.fadeButton()
-        });
+        document.getElementById("beginButton").addEventListener("click", function() {ClickHandler.FadeButton()})
     }
 
-    static fadeButton() {
+    static FadeButton() {
         document.getElementById("classyJoke").value = "hidden";
     }
 }

@@ -29,13 +29,13 @@ var ClickHandler = function () {
         _classCallCheck(this, ClickHandler);
 
         document.getElementById("beginButton").addEventListener("click", function () {
-            ClickHandler.fadeButton();
+            ClickHandler.FadeButton();
         });
     }
 
     _createClass(ClickHandler, null, [{
-        key: "fadeButton",
-        value: function fadeButton() {
+        key: "FadeButton",
+        value: function FadeButton() {
             document.getElementById("classyJoke").value = "hidden";
         }
     }]);

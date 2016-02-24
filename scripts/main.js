@@ -23,7 +23,7 @@ function _classCallCheck(instance, Constructor) {
 var main = function main() {
     _classCallCheck(this, main);
 
-    new _ClickHandler2.default();
+    new _ClickHandler2.default.FadeButton();
 };
 
 window.onload = function () {

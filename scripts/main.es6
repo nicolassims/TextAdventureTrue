@@ -10,7 +10,7 @@ import ClickHandler from './ClickHandler.js';
 
 class main {
     constructor() {
-        new ClickHandler();
+        new ClickHandler.FadeButton();
     }
 }
 

@@ -8,6 +8,6 @@ export default class ClickHandler {
     }
 
     static fadeButton() {
-
+        document.getElementById("420").style.visibility = "hidden";
     }
 }

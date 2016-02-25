@@ -1,10 +1,8 @@
-'use strict';
-
 module.exports = {
-  entry: './scripts/main.js',
+  entry: './main.js',
   output: {
-    path:"scripts/",
-    filename: 'scripts/bundle.js'
+    path: __dirname,
+    filename: 'bundle.js'
   },
   module: {
     loaders: [{ test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' }]

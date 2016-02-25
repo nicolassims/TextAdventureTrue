@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www",
-    "build":"babel scripts -d scripts"
+    "start": "node ./bin/www"
+
   },
   "dependencies": {
     "babel-core": "latest",
@@ -19,4 +19,5 @@
   "devDependencies": {
     "babel-eslint": "^5.0.0-beta10"
   }
+
 }

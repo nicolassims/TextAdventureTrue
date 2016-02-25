@@ -6,11 +6,12 @@
 
 'use strict';
 
-import ClickHandler from './ClickHandler.js';
+//import ClickHandler from './ClickHandler.js';
 
 class main {
     constructor() {
-        new ClickHandler.FadeButton();
+        //new ClickHandler.HideButton();
+        document.getElementById("beginButton").addEventListener("click", function(){ console.log("hello world")})
     }
 }
 

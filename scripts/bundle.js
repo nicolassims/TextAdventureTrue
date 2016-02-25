@@ -59,9 +59,9 @@
 	var main = function main() {
 	    _classCallCheck(this, main);
 
-	    //new ClickHandler.HideButton();
+	    //add hidebutton
 	    document.getElementById("beginButton").addEventListener("click", function () {
-	        console.log("hello world");
+	        document.getElementById("ClassyJoke");
 	    });
 	};
 

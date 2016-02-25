@@ -10,8 +10,8 @@
 
 class main {
     constructor() {
-        //new ClickHandler.HideButton();
-        document.getElementById("beginButton").addEventListener("click", function(){ console.log("hello world")})
+        //add hidebutton
+        document.getElementById("beginButton").addEventListener("click", function(){ document.getElementById("ClassyJoke")})
     }
 }
 

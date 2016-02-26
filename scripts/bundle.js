@@ -42,7 +42,7 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	/*  AUTHOR: Nicolas Sims
 	 *  VERSION: 1
@@ -52,22 +52,115 @@
 
 	'use strict';
 
-	//import ClickHandler from './ClickHandler.js';
+	var _HideStuff = __webpack_require__(1);
+
+	var _HideStuff2 = _interopRequireDefault(_HideStuff);
+
+	var _RevealStuff = __webpack_require__(2);
+
+	var _RevealStuff2 = _interopRequireDefault(_RevealStuff);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	var main = function main() {
 	    _classCallCheck(this, main);
 
-	    //add hidebutton
-	    document.getElementById("beginButton").addEventListener("click", function () {
-	        document.getElementById("ClassyJoke");
-	    });
+	    _HideStuff2.default.hideAll();
+	    _HideStuff2.default.watchBeginningItems();
+	    _RevealStuff2.default.revealFirstText();
 	};
 
 	window.onload = function () {
 	    new main();
 	};
+
+/***/ },
+/* 1 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	/**
+	 * Created by Administrator on 2/26/2016.
+	 */
+
+	var HideStuff = function () {
+	    function HideStuff() {
+	        _classCallCheck(this, HideStuff);
+	    }
+
+	    _createClass(HideStuff, null, [{
+	        key: "watchBeginningItems",
+	        value: function watchBeginningItems() {
+	            document.getElementById("beginButton").addEventListener("click", function () {
+	                HideStuff.hideBeginningItems();
+	            }, false);
+	        }
+	    }, {
+	        key: "hideBeginningItems",
+	        value: function hideBeginningItems() {
+	            document.getElementById("classyJoke").style.display = 'none';
+	            document.getElementById("beginButton").style.display = 'none';
+	        }
+	    }, {
+	        key: "hideAll",
+	        value: function hideAll() {
+	            document.getElementById("firstText").style.display = 'none';
+	        }
+	    }]);
+
+	    return HideStuff;
+	}();
+
+	exports.default = HideStuff;
+
+/***/ },
+/* 2 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	/**
+	 * Created by Administrator on 2/26/2016.
+	 */
+
+	var RevealStuff = function () {
+	    function RevealStuff() {
+	        _classCallCheck(this, RevealStuff);
+	    }
+
+	    _createClass(RevealStuff, null, [{
+	        key: "revealFirstText",
+	        value: function revealFirstText() {
+	            var visibleBeginningStuff = document.getElementById("beginButton").style.display;
+	            if (visibleBeginningStuff == "none") {
+	                document.getElementById("firstText").style.display = "block";
+	            }
+	        }
+	    }]);
+
+	    return RevealStuff;
+	}();
+
+	exports.default = RevealStuff;
 
 /***/ }
 /******/ ]);

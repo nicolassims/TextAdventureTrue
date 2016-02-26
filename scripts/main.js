@@ -6,15 +6,17 @@
 
 'use strict';
 
-//import ClickHandler from './ClickHandler.js';
+import HideStuff from './HideStuff.js';
+import RevealStuff from './RevealStuff';
 
 class main {
     constructor() {
-        //add hidebutton
-        document.getElementById("beginButton").addEventListener("click", function(){ document.getElementById("ClassyJoke")})
+        HideStuff.hideAll();
+        HideStuff.watchBeginningItems();
+        RevealStuff.revealFirstText();
     }
 }
 
 window.onload = function() {
     new main();
-}
+};

@@ -11,8 +11,7 @@ import RevealStuff from './RevealStuff';
 
 class main {
     constructor() {
-        HideStuff.hideAll();
-        HideStuff.watchBeginningItems();
+        HideStuff.hideBeginningItems();
         RevealStuff.revealFirstText();
     }
 }

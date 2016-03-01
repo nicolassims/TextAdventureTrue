@@ -208,11 +208,15 @@
 	                var x = document.getElementById("firstInputA").checked;
 	                var y = document.getElementById("firstInputB").checked;
 	                if (x == true && y == true) {
-	                    console.log("Both");
+	                    RevealStuff.revealSecondStuff("both");
 	                } else if (x == true || y == true) {
-	                    console.log("One");
+	                    if (x == true) {
+	                        RevealStuff.revealSecondStuff("xChecked");
+	                    } else {
+	                        RevealStuff.revealSecondStuff("yChecked");
+	                    }
 	                } else {
-	                    console.log("None");
+	                    RevealStuff.revealSecondStuff("none");
 	                }
 	            }, false);
 	        }

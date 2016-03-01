@@ -60,6 +60,10 @@
 
 	var _RevealStuff2 = _interopRequireDefault(_RevealStuff);
 
+	var _CheckBoxHandler = __webpack_require__(3);
+
+	var _CheckBoxHandler2 = _interopRequireDefault(_CheckBoxHandler);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -67,9 +71,10 @@
 	var main = function main() {
 	    _classCallCheck(this, main);
 
-	    _HideStuff2.default.hideFirstText();
-	    _HideStuff2.default.hideBeginningItems();
-	    _RevealStuff2.default.revealFirstText();
+	    _HideStuff2.default.hideFirstStuff();
+	    _HideStuff2.default.hideBeginningStuff();
+	    _RevealStuff2.default.revealFirstStuff();
+	    _CheckBoxHandler2.default.handleSecondCheckboxes();
 	};
 
 	window.onload = function () {
@@ -100,13 +105,16 @@
 	    }
 
 	    _createClass(HideStuff, null, [{
-	        key: "hideFirstText",
-	        value: function hideFirstText() {
+	        key: "hideFirstStuff",
+	        value: function hideFirstStuff() {
 	            document.getElementById("firstText").style.display = "none";
+	            document.getElementById("leftInput").style.display = "none";
+	            document.getElementById("rightInput").style.display = "none";
+	            document.getElementById("secondButton").style.display = "none";
 	        }
 	    }, {
-	        key: "hideBeginningItems",
-	        value: function hideBeginningItems() {
+	        key: "hideBeginningStuff",
+	        value: function hideBeginningStuff() {
 	            document.getElementById("beginButton").addEventListener("click", function () {
 	                document.getElementById("beginButton").style.display = "none";
 	            }, false);
@@ -145,18 +153,75 @@
 	    }
 
 	    _createClass(RevealStuff, null, [{
-	        key: "revealFirstText",
-	        value: function revealFirstText() {
+	        key: "revealFirstStuff",
+	        value: function revealFirstStuff() {
 	            document.getElementById("beginButton").addEventListener("click", function () {
 	                document.getElementById("firstText").style.display = "block";
 	            }, false);
+	            document.getElementById("beginButton").addEventListener("click", function () {
+	                document.getElementById("leftInput").style.display = "block";
+	            }, false);
+	            document.getElementById("beginButton").addEventListener("click", function () {
+	                document.getElementById("rightInput").style.display = "block";
+	            }, false);
+	            document.getElementById("beginButton").addEventListener("click", function () {
+	                document.getElementById("secondButton").style.display = "block";
+	            }, false);
 	        }
+	    }, {
+	        key: "revealSecondStuff",
+	        value: function revealSecondStuff() {}
 	    }]);
 
 	    return RevealStuff;
 	}();
 
 	exports.default = RevealStuff;
+
+/***/ },
+/* 3 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	/**
+	 * Created by Owner on 2/29/2016.
+	 */
+
+	var CheckBoxHandler = function () {
+	    function CheckBoxHandler() {
+	        _classCallCheck(this, CheckBoxHandler);
+	    }
+
+	    _createClass(CheckBoxHandler, null, [{
+	        key: "handleSecondCheckboxes",
+	        value: function handleSecondCheckboxes() {
+	            document.getElementById("secondButton").addEventListener("click", function () {
+	                var x = document.getElementById("firstInputA").checked;
+	                var y = document.getElementById("firstInputB").checked;
+	                if (x == true && y == true) {
+	                    console.log("Both");
+	                } else if (x == true || y == true) {
+	                    console.log("One");
+	                } else {
+	                    console.log("None");
+	                }
+	            }, false);
+	        }
+	    }]);
+
+	    return CheckBoxHandler;
+	}();
+
+	exports.default = CheckBoxHandler;
 
 /***/ }
 /******/ ]);

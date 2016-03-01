@@ -3,11 +3,14 @@
  */
 
 export default class HideStuff {
-    static hideFirstText() {
-        document.getElementById("firstText").style.display = "none"
+    static hideFirstStuff() {
+        document.getElementById("firstText").style.display = "none";
+        document.getElementById("leftInput").style.display = "none";
+        document.getElementById("rightInput").style.display = "none";
+        document.getElementById("secondButton").style.display = "none";
     }
 
-    static hideBeginningItems() {
+    static hideBeginningStuff() {
         document.getElementById("beginButton").addEventListener("click", function() {document.getElementById("beginButton").style.display = "none"}, false);
         document.getElementById("beginButton").addEventListener("click", function() {document.getElementById("prompt").style.display = "none"}, false);
     }

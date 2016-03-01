@@ -38,4 +38,10 @@ body {
 .row {
   margin-top: 1%; }
 
+#leftInput {
+  float: left; }
+
+#rightInput {
+  float: right; }
+
 /*# sourceMappingURL=style.css.map */

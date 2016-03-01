@@ -67,8 +67,8 @@
 	var main = function main() {
 	    _classCallCheck(this, main);
 
-	    _HideStuff2.default.hideAll();
-	    _HideStuff2.default.watchBeginningItems();
+	    _HideStuff2.default.hideFirstText();
+	    _HideStuff2.default.hideBeginningItems();
 	    _RevealStuff2.default.revealFirstText();
 	};
 
@@ -91,7 +91,7 @@
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	/**
-	 * Created by Administrator on 2/26/2016.
+	 * Created by Owner on 2/28/2016.
 	 */
 
 	var HideStuff = function () {
@@ -100,22 +100,19 @@
 	    }
 
 	    _createClass(HideStuff, null, [{
-	        key: "watchBeginningItems",
-	        value: function watchBeginningItems() {
-	            document.getElementById("beginButton").addEventListener("click", function () {
-	                HideStuff.hideBeginningItems();
-	            }, false);
+	        key: "hideFirstText",
+	        value: function hideFirstText() {
+	            document.getElementById("firstText").style.display = "none";
 	        }
 	    }, {
 	        key: "hideBeginningItems",
 	        value: function hideBeginningItems() {
-	            document.getElementById("classyJoke").style.display = 'none';
-	            document.getElementById("beginButton").style.display = 'none';
-	        }
-	    }, {
-	        key: "hideAll",
-	        value: function hideAll() {
-	            document.getElementById("firstText").style.display = 'none';
+	            document.getElementById("beginButton").addEventListener("click", function () {
+	                document.getElementById("beginButton").style.display = "none";
+	            }, false);
+	            document.getElementById("beginButton").addEventListener("click", function () {
+	                document.getElementById("prompt").style.display = "none";
+	            }, false);
 	        }
 	    }]);
 
@@ -150,10 +147,9 @@
 	    _createClass(RevealStuff, null, [{
 	        key: "revealFirstText",
 	        value: function revealFirstText() {
-	            var visibleBeginningStuff = document.getElementById("beginButton").style.display;
-	            if (visibleBeginningStuff == "none") {
+	            document.getElementById("beginButton").addEventListener("click", function () {
 	                document.getElementById("firstText").style.display = "block";
-	            }
+	            }, false);
 	        }
 	    }]);
 

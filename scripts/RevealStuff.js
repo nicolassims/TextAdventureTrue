@@ -4,9 +4,6 @@
 
 export default class RevealStuff {
     static revealFirstText() {
-        let visibleBeginningStuff = document.getElementById("beginButton").style.display;
-        if (visibleBeginningStuff == "none") {
-            document.getElementById("firstText").style.display = "block";
-        }
+        document.getElementById("beginButton").addEventListener("click", function() {document.getElementById("firstText").style.display = "block"}, false);
     }
 }

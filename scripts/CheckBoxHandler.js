@@ -2,28 +2,26 @@
  * Created by Owner on 2/29/2016.
  */
 
+import RevealStuff from './RevealStuff';
 
 export default class CheckBoxHandler {
-    constructor() {
-
-    }
-
     static handleCheckboxes() {
         document.getElementById("secondButton").addEventListener("click", function() {
-            let aChecked = document.getElementById("firstInputA").checked;
-            let bChecked = document.getElementById("firstInputB").checked;
-            if (aChecked == true && bChecked == true) {
-                let whatChecked = "both";
-            } else if (aChecked == true || bChecked == true) {
-                if (aChecked == true) {
-                    let whatChecked = "aChecked";
+            let leftChecked = document.getElementById("firstInputLeft").checked;
+            let rightChecked = document.getElementById("firstInputRight").checked;
+            console.log(leftChecked);
+            console.log(rightChecked);
+            if (leftChecked == true && rightChecked == true) {
+                new RevealStuff("bothDirections").revealSecondStuff("bothDirections");
+            } else if (leftChecked == true || rightChecked == true) {
+                if (leftChecked == true) {
+                    new RevealStuff('leftDirection').revealSecondStuff("leftDirection");
                 } else {
-                    let whatChecked = "bChecked";
+                    new RevealStuff("rightDirection").revealSecondStuff("rightDirection");
                 }
             } else {
-                let whatChecked = "noChecked";
+                new RevealStuff("noDirection").revealSecondStuff("noDirection");
             }
         }, false);
-
     };
 }

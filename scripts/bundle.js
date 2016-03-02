@@ -105,6 +105,16 @@
 	    }
 
 	    _createClass(HideStuff, null, [{
+	        key: "hideBeginningStuff",
+	        value: function hideBeginningStuff() {
+	            document.getElementById("beginButton").addEventListener("click", function () {
+	                document.getElementById("beginButton").style.display = "none";
+	            }, false);
+	            document.getElementById("beginButton").addEventListener("click", function () {
+	                document.getElementById("prompt").style.display = "none";
+	            }, false);
+	        }
+	    }, {
 	        key: "hideFirstStuff",
 	        value: function hideFirstStuff() {
 	            document.getElementById("firstText").style.display = "none";
@@ -115,16 +125,6 @@
 	            document.getElementById("rightDirection").style.display = "none";
 	            document.getElementById("leftDirection").style.display = "none";
 	            document.getElementById("noDirection").style.display = "none";
-	        }
-	    }, {
-	        key: "hideBeginningStuff",
-	        value: function hideBeginningStuff() {
-	            document.getElementById("beginButton").addEventListener("click", function () {
-	                document.getElementById("beginButton").style.display = "none";
-	            }, false);
-	            document.getElementById("beginButton").addEventListener("click", function () {
-	                document.getElementById("prompt").style.display = "none";
-	            }, false);
 	        }
 	    }]);
 
@@ -156,7 +156,20 @@
 	        _classCallCheck(this, RevealStuff);
 	    }
 
-	    _createClass(RevealStuff, null, [{
+	    _createClass(RevealStuff, [{
+	        key: "revealSecondStuff",
+	        value: function revealSecondStuff(whatChecked) {
+	            if (whatChecked == "both") {
+	                document.getElementById("bothDirections").style.display = "block";
+	            } else if (whatChecked == "aChecked") {
+	                document.getElementById("rightDirection").style.display = "block";
+	            } else if (whatChecked == "bChecked") {
+	                document.getElementById("leftDirection").style.display = "block";
+	            } else {
+	                document.getElementById("noDirection").style.display = "block";
+	            }
+	        }
+	    }], [{
 	        key: "revealFirstStuff",
 	        value: function revealFirstStuff() {
 	            document.getElementById("beginButton").addEventListener("click", function () {
@@ -172,19 +185,6 @@
 	                document.getElementById("secondButton").style.display = "block";
 	            }, false);
 	        }
-	    }, {
-	        key: "revealSecondStuff",
-	        value: function revealSecondStuff(whatChecked) {
-	            if (whatChecked == "both") {
-	                document.getElementById("bothDirections").style.display = "block";
-	            } else if (whatChecked == "aChecked") {
-	                document.getElementById("rightDirection").style.display = "block";
-	            } else if (whatChecked == "bChecked") {
-	                document.getElementById("leftDirection").style.display = "block";
-	            } else {
-	                document.getElementById("noDirection").style.display = "block";
-	            }
-	        }
 	    }]);
 
 	    return RevealStuff;
@@ -194,7 +194,7 @@
 
 /***/ },
 /* 3 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
@@ -202,13 +202,17 @@
 	    value: true
 	});
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * Created by Owner on 2/29/2016.
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
+
+	var _RevealStuff = __webpack_require__(2);
+
+	var _RevealStuff2 = _interopRequireDefault(_RevealStuff);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	/**
-	 * Created by Owner on 2/29/2016.
-	 */
 
 	var CheckBoxHandler = function () {
 	    function CheckBoxHandler() {
@@ -219,18 +223,20 @@
 	        key: "handleCheckboxes",
 	        value: function handleCheckboxes() {
 	            document.getElementById("secondButton").addEventListener("click", function () {
-	                var aChecked = document.getElementById("firstInputA").checked;
-	                var bChecked = document.getElementById("firstInputB").checked;
-	                if (aChecked == true && bChecked == true) {
-	                    var whatChecked = "both";
-	                } else if (aChecked == true || bChecked == true) {
-	                    if (aChecked == true) {
-	                        var whatChecked = "aChecked";
+	                var leftChecked = document.getElementById("firstInputLeft").checked;
+	                var rightChecked = document.getElementById("firstInputRight").checked;
+	                console.log(leftChecked);
+	                console.log(rightChecked);
+	                if (leftChecked == true && rightChecked == true) {
+	                    new _RevealStuff2.default("bothDirections").revealSecondStuff("bothDirections");
+	                } else if (leftChecked == true || rightChecked == true) {
+	                    if (leftChecked == true) {
+	                        new _RevealStuff2.default('leftDirection').revealSecondStuff("leftDirection");
 	                    } else {
-	                        var whatChecked = "bChecked";
+	                        new _RevealStuff2.default("rightDirection").revealSecondStuff("rightDirection");
 	                    }
 	                } else {
-	                    var whatChecked = "noChecked";
+	                    new _RevealStuff2.default("noDirection").revealSecondStuff("noDirection");
 	                }
 	            }, false);
 	        }

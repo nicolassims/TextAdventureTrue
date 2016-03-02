@@ -4,21 +4,26 @@
 
 
 export default class CheckBoxHandler {
-    static handleSecondCheckboxes() {
+    constructor() {
+
+    }
+
+    static handleCheckboxes() {
         document.getElementById("secondButton").addEventListener("click", function() {
-            let x = document.getElementById("firstInputA").checked;
-            let y = document.getElementById("firstInputB").checked;
-            if (x == true && y == true) {
-                RevealStuff.revealSecondStuff("both");
-            } else if (x == true || y == true) {
-                if (x == true) {
-                    RevealStuff.revealSecondStuff("xChecked");
+            let aChecked = document.getElementById("firstInputA").checked;
+            let bChecked = document.getElementById("firstInputB").checked;
+            if (aChecked == true && bChecked == true) {
+                let whatChecked = "both";
+            } else if (aChecked == true || bChecked == true) {
+                if (aChecked == true) {
+                    let whatChecked = "aChecked";
                 } else {
-                    RevealStuff.revealSecondStuff("yChecked");
+                    let whatChecked = "bChecked";
                 }
             } else {
-                RevealStuff.revealSecondStuff("none");
+                let whatChecked = "noChecked";
             }
         }, false);
+
     };
 }

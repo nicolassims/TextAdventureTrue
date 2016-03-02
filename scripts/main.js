@@ -15,7 +15,7 @@ class main {
         HideStuff.hideFirstStuff();
         HideStuff.hideBeginningStuff();
         RevealStuff.revealFirstStuff();
-        CheckBoxHandler.handleSecondCheckboxes();
+        CheckBoxHandler.handleCheckboxes();
     }
 }
 

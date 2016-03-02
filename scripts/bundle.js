@@ -74,7 +74,7 @@
 	    _HideStuff2.default.hideFirstStuff();
 	    _HideStuff2.default.hideBeginningStuff();
 	    _RevealStuff2.default.revealFirstStuff();
-	    _CheckBoxHandler2.default.handleSecondCheckboxes();
+	    _CheckBoxHandler2.default.handleCheckboxes();
 	};
 
 	window.onload = function () {
@@ -111,6 +111,10 @@
 	            document.getElementById("leftInput").style.display = "none";
 	            document.getElementById("rightInput").style.display = "none";
 	            document.getElementById("secondButton").style.display = "none";
+	            document.getElementById("bothDirections").style.display = "none";
+	            document.getElementById("rightDirection").style.display = "none";
+	            document.getElementById("leftDirection").style.display = "none";
+	            document.getElementById("noDirection").style.display = "none";
 	        }
 	    }, {
 	        key: "hideBeginningStuff",
@@ -170,7 +174,17 @@
 	        }
 	    }, {
 	        key: "revealSecondStuff",
-	        value: function revealSecondStuff() {}
+	        value: function revealSecondStuff(whatChecked) {
+	            if (whatChecked == "both") {
+	                document.getElementById("bothDirections").style.display = "block";
+	            } else if (whatChecked == "aChecked") {
+	                document.getElementById("rightDirection").style.display = "block";
+	            } else if (whatChecked == "bChecked") {
+	                document.getElementById("leftDirection").style.display = "block";
+	            } else {
+	                document.getElementById("noDirection").style.display = "block";
+	            }
+	        }
 	    }]);
 
 	    return RevealStuff;
@@ -202,21 +216,21 @@
 	    }
 
 	    _createClass(CheckBoxHandler, null, [{
-	        key: "handleSecondCheckboxes",
-	        value: function handleSecondCheckboxes() {
+	        key: "handleCheckboxes",
+	        value: function handleCheckboxes() {
 	            document.getElementById("secondButton").addEventListener("click", function () {
-	                var x = document.getElementById("firstInputA").checked;
-	                var y = document.getElementById("firstInputB").checked;
-	                if (x == true && y == true) {
-	                    RevealStuff.revealSecondStuff("both");
-	                } else if (x == true || y == true) {
-	                    if (x == true) {
-	                        RevealStuff.revealSecondStuff("xChecked");
+	                var aChecked = document.getElementById("firstInputA").checked;
+	                var bChecked = document.getElementById("firstInputB").checked;
+	                if (aChecked == true && bChecked == true) {
+	                    var whatChecked = "both";
+	                } else if (aChecked == true || bChecked == true) {
+	                    if (aChecked == true) {
+	                        var whatChecked = "aChecked";
 	                    } else {
-	                        RevealStuff.revealSecondStuff("yChecked");
+	                        var whatChecked = "bChecked";
 	                    }
 	                } else {
-	                    RevealStuff.revealSecondStuff("none");
+	                    var whatChecked = "noChecked";
 	                }
 	            }, false);
 	        }

@@ -67,11 +67,13 @@
 	var main = function main() {
 	    _classCallCheck(this, main);
 
-	    _HideStuff2.default.hideFirstStuff();
-	    _HideStuff2.default.hideSecondStuff();
-	    _HideStuff2.default.hideBeginningStuff();
+	    _HideStuff2.default.hideAll();
+	    _HideStuff2.default.hideIntroItems();
 	    _RevealStuff2.default.revealFirstStuff();
 	    _RevealStuff2.default.revealCheckboxResults();
+	    _HideStuff2.default.hideFirstStuff();
+	    _HideStuff2.default.hideCheckboxResults();
+	    _RevealStuff2.default.revealNameInput();
 	};
 
 	window.onload = function () {
@@ -102,30 +104,52 @@
 	    }
 
 	    _createClass(HideStuff, null, [{
-	        key: "hideBeginningStuff",
-	        value: function hideBeginningStuff() {
+	        key: "hideAll",
+	        value: function hideAll() {
+	            document.getElementById("firstText").style.display = "none";
+	            document.getElementById("leftInput").style.display = "none";
+	            document.getElementById("rightInput").style.display = "none";
+	            document.getElementById("secondButton").style.display = "none";
+	            document.getElementById("bothDirections").style.display = "none";
+	            document.getElementById("rightDirection").style.display = "none";
+	            document.getElementById("leftDirection").style.display = "none";
+	            document.getElementById("noDirection").style.display = "none";
+	            document.getElementById("heroName").style.display = "none";
+	            document.getElementById("loserName").style.display = "none";
+	            document.getElementById("heroButton").style.display = "none";
+	            document.getElementById("loserButton").style.display = "none";
+	            document.getElementById("wentLeft").style.display = "none";
+	            document.getElementById("wentElsewhere").style.display = "none";
+	            document.getElementById("continueFromCheckboxResults").style.display = "none";
+	        }
+	    }, {
+	        key: "hideIntroItems",
+	        value: function hideIntroItems() {
 	            document.getElementById("beginButton").addEventListener("click", function () {
 	                document.getElementById("beginButton").style.display = "none";
-	            }, false);
-	            document.getElementById("beginButton").addEventListener("click", function () {
 	                document.getElementById("prompt").style.display = "none";
 	            }, false);
 	        }
 	    }, {
 	        key: "hideFirstStuff",
 	        value: function hideFirstStuff() {
-	            document.getElementById("firstText").style.display = "none";
-	            document.getElementById("leftInput").style.display = "none";
-	            document.getElementById("rightInput").style.display = "none";
-	            document.getElementById("secondButton").style.display = "none";
+	            document.getElementById("secondButton").addEventListener("click", function () {
+	                document.getElementById("firstText").style.display = "none";
+	                document.getElementById("leftInput").style.display = "none";
+	                document.getElementById("rightInput").style.display = "none";
+	                document.getElementById("secondButton").style.display = "none";
+	            }, false);
 	        }
 	    }, {
-	        key: "hideSecondStuff",
-	        value: function hideSecondStuff() {
-	            document.getElementById("bothDirections").style.display = "none";
-	            document.getElementById("rightDirection").style.display = "none";
-	            document.getElementById("leftDirection").style.display = "none";
-	            document.getElementById("noDirection").style.display = "none";
+	        key: "hideCheckboxResults",
+	        value: function hideCheckboxResults() {
+	            document.getElementById("continueFromCheckboxResults").addEventListener("click", function () {
+	                document.getElementById("bothDirections").style.display = "none";
+	                document.getElementById("rightDirection").style.display = "none";
+	                document.getElementById("leftDirection").style.display = "none";
+	                document.getElementById("noDirection").style.display = "none";
+	                document.getElementById("continueFromCheckboxResults").style.display = "none";
+	            }, false);
 	        }
 	    }]);
 
@@ -162,14 +186,8 @@
 	        value: function revealFirstStuff() {
 	            document.getElementById("beginButton").addEventListener("click", function () {
 	                document.getElementById("firstText").style.display = "block";
-	            }, false);
-	            document.getElementById("beginButton").addEventListener("click", function () {
 	                document.getElementById("leftInput").style.display = "block";
-	            }, false);
-	            document.getElementById("beginButton").addEventListener("click", function () {
 	                document.getElementById("rightInput").style.display = "block";
-	            }, false);
-	            document.getElementById("beginButton").addEventListener("click", function () {
 	                document.getElementById("secondButton").style.display = "block";
 	            }, false);
 	        }
@@ -191,6 +209,24 @@
 	                    }
 	                } else {
 	                    document.getElementById("noDirection").style.display = "block";
+	                }
+	                document.getElementById("continueFromCheckboxResults").style.display = "block";
+	            }, false);
+	        }
+	    }, {
+	        key: "revealNameInput",
+	        value: function revealNameInput() {
+	            document.getElementById("continueFromCheckboxResults").addEventListener("click", function () {
+	                var leftChecked = document.getElementById("firstInputLeft").checked;
+	                var rightChecked = document.getElementById("firstInputRight").checked;
+	                if (leftChecked == true && rightChecked != true) {
+	                    document.getElementById("wentLeft").style.display = "block";
+	                    document.getElementById("heroName").style.display = "block";
+	                    document.getElementById("heroButton").style.display = "block";
+	                } else {
+	                    document.getElementById("wentElsewhere").style.display = "block";
+	                    document.getElementById("loserName").style.display = "block";
+	                    document.getElementById("loserButton").style.display = "block";
 	                }
 	            }, false);
 	        }

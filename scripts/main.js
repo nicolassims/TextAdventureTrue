@@ -11,11 +11,13 @@ import RevealStuff from './RevealStuff';
 
 class main {
     constructor() {
-        HideStuff.hideFirstStuff();
-        HideStuff.hideSecondStuff();
-        HideStuff.hideBeginningStuff();
+        HideStuff.hideAll();
+        HideStuff.hideIntroItems();
         RevealStuff.revealFirstStuff();
         RevealStuff.revealCheckboxResults();
+        HideStuff.hideFirstStuff();
+        HideStuff.hideCheckboxResults();
+        RevealStuff.revealNameInput();
     }
 }
 

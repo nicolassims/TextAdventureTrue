@@ -6,10 +6,12 @@
 
 export default class RevealStuff {
     static revealFirstStuff() {
-        document.getElementById("beginButton").addEventListener("click", function() {document.getElementById("firstText").style.display = "block"}, false);
-        document.getElementById("beginButton").addEventListener("click", function() {document.getElementById("leftInput").style.display = "block"}, false);
-        document.getElementById("beginButton").addEventListener("click", function() {document.getElementById("rightInput").style.display = "block"}, false);
-        document.getElementById("beginButton").addEventListener("click", function() {document.getElementById("secondButton").style.display = "block"}, false);
+        document.getElementById("beginButton").addEventListener("click", function() {
+            document.getElementById("firstText").style.display = "block";
+            document.getElementById("leftInput").style.display = "block";
+            document.getElementById("rightInput").style.display = "block";
+            document.getElementById("secondButton").style.display = "block";
+        }, false);
     }
 
     static revealCheckboxResults() {
@@ -29,6 +31,23 @@ export default class RevealStuff {
             } else {
                 document.getElementById("noDirection").style.display = "block";
             }
+            document.getElementById("continueFromCheckboxResults").style.display = "block";
         }, false);
     };
+
+    static revealNameInput() {
+        document.getElementById("continueFromCheckboxResults").addEventListener("click", function() {
+            let leftChecked = document.getElementById("firstInputLeft").checked;
+            let rightChecked = document.getElementById("firstInputRight").checked;
+            if (leftChecked == true && rightChecked != true) {
+                document.getElementById("wentLeft").style.display = "block";
+                document.getElementById("heroName").style.display = "block";
+                document.getElementById("heroButton").style.display = "block";
+            } else {
+                document.getElementById("wentElsewhere").style.display = "block";
+                document.getElementById("loserName").style.display = "block";
+                document.getElementById("loserButton").style.display = "block";
+            }
+        }, false);
+    }
 }

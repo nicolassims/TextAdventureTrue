@@ -24,21 +24,20 @@ ASSIGNMENT: Create a Text Adventure
                     > Begin
                 </div>
             </div>
-            <div class="row">
-                <div id="prompt">
-                    > Begin?
-                </div>
+            <div id="prompt">
+                > Begin?
             </div>
-            <div class="row">
-                <div class="button hollow success starter" id="beginButton">
-                    > Begin
-                </div>
+            <div class="button hollow success starter" id="beginButton">
+                > Begin
             </div>
-            <div class="row">
                 <div id="firstText">
-                    > You wake up in a dark cave. The smell of meat wafts through the caverns. You hear mumbles echoing from wall to wall. On your left, a steel door. On your right, a tunnel deeper into the cave. Which way do you go?
+                    <div class="row">> You wake up in a dark cave.</div>
+                    <div class="row">> The smell of meat wafts through the caverns.</div>
+                    <div class="row">> You hear mumbles echoing from wall to wall.</div>
+                    <div class="row">> On your left, a steel door.</div>
+                    <div class="row">> On your right, a tunnel deeper into the cave.</div>
+                    <div class="row">> Which way do you go?</div>
                 </div>
-            </div>
             <div class="row">
                 <div id="leftInput">
                     > Left <input type="checkbox" id="firstInputLeft">
@@ -47,10 +46,8 @@ ASSIGNMENT: Create a Text Adventure
                     <input type="checkbox" id="firstInputRight"> > Right
                 </div>
             </div>
-            <div class="row">
-                <div class="button hollow success" id="secondButton">
-                    > Begin
-                </div>
+            <div class="button hollow success" id="secondButton">
+                > Begin
             </div>
             <div class="row">
                 <div id="bothDirections">
@@ -72,6 +69,31 @@ ASSIGNMENT: Create a Text Adventure
                     > You stay still until a Grue comes along and devours you.
                 </div>
             </div>
+
+            <div class="button hollow success" id="continueFromCheckboxResults">
+                > Begin
+            </div>
+            <div class="row">
+                <div id="wentLeft">
+                    > Congratulations. Inscribe your name on the list of mighty heroes.
+                </div>
+            </div>
+            <input type="text" id="heroName">
+            <div class="button hollow success" id="heroButton">
+                > Begin
+            </div>
+
+            <div class="row">
+                <div id="wentElsewhere">
+                    > Congratulations. Inscribe your name on the list of complete LOSERS.
+                </div>
+            </div>
+            <input type="text" id="loserName">
+            <div class="button hollow success" id="loserButton">
+                > Begin
+            </div>
+
+
         </div>
         <div class="small-2 columns">
             Put some kinda image here. Put some kinda image here. Put some kinda image here. Put some kinda image here. Put some kinda image here.

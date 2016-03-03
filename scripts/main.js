@@ -6,8 +6,9 @@
 
 'use strict';
 
-import HideStuff from './HideStuff.js';
+import HideStuff from './HideStuff';
 import RevealStuff from './RevealStuff';
+import AddNames from './AddNames';
 
 class main {
     constructor() {
@@ -18,6 +19,7 @@ class main {
         HideStuff.hideFirstStuff();
         HideStuff.hideCheckboxResults();
         RevealStuff.revealNameInput();
+        AddNames.addHeroName();
     }
 }
 

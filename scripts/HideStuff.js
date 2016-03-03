@@ -13,6 +13,9 @@ export default class HideStuff {
         document.getElementById("leftInput").style.display = "none";
         document.getElementById("rightInput").style.display = "none";
         document.getElementById("secondButton").style.display = "none";
+    }
+
+    static hideSecondStuff() {
         document.getElementById("bothDirections").style.display = "none";
         document.getElementById("rightDirection").style.display = "none";
         document.getElementById("leftDirection").style.display = "none";

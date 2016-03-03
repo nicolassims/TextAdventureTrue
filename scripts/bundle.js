@@ -60,10 +60,6 @@
 
 	var _RevealStuff2 = _interopRequireDefault(_RevealStuff);
 
-	var _CheckBoxHandler = __webpack_require__(3);
-
-	var _CheckBoxHandler2 = _interopRequireDefault(_CheckBoxHandler);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -72,9 +68,10 @@
 	    _classCallCheck(this, main);
 
 	    _HideStuff2.default.hideFirstStuff();
+	    _HideStuff2.default.hideSecondStuff();
 	    _HideStuff2.default.hideBeginningStuff();
 	    _RevealStuff2.default.revealFirstStuff();
-	    _CheckBoxHandler2.default.handleCheckboxes();
+	    _RevealStuff2.default.revealCheckboxResults();
 	};
 
 	window.onload = function () {
@@ -121,6 +118,10 @@
 	            document.getElementById("leftInput").style.display = "none";
 	            document.getElementById("rightInput").style.display = "none";
 	            document.getElementById("secondButton").style.display = "none";
+	        }
+	    }, {
+	        key: "hideSecondStuff",
+	        value: function hideSecondStuff() {
 	            document.getElementById("bothDirections").style.display = "none";
 	            document.getElementById("rightDirection").style.display = "none";
 	            document.getElementById("leftDirection").style.display = "none";
@@ -137,6 +138,10 @@
 /* 2 */
 /***/ function(module, exports) {
 
+	/**
+	 * Created by Administrator on 2/26/2016.
+	 */
+
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
@@ -147,29 +152,12 @@
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	/**
-	 * Created by Administrator on 2/26/2016.
-	 */
-
 	var RevealStuff = function () {
 	    function RevealStuff() {
 	        _classCallCheck(this, RevealStuff);
 	    }
 
-	    _createClass(RevealStuff, [{
-	        key: "revealSecondStuff",
-	        value: function revealSecondStuff(whatChecked) {
-	            if (whatChecked == "both") {
-	                document.getElementById("bothDirections").style.display = "block";
-	            } else if (whatChecked == "aChecked") {
-	                document.getElementById("rightDirection").style.display = "block";
-	            } else if (whatChecked == "bChecked") {
-	                document.getElementById("leftDirection").style.display = "block";
-	            } else {
-	                document.getElementById("noDirection").style.display = "block";
-	            }
-	        }
-	    }], [{
+	    _createClass(RevealStuff, null, [{
 	        key: "revealFirstStuff",
 	        value: function revealFirstStuff() {
 	            document.getElementById("beginButton").addEventListener("click", function () {
@@ -185,67 +173,33 @@
 	                document.getElementById("secondButton").style.display = "block";
 	            }, false);
 	        }
-	    }]);
-
-	    return RevealStuff;
-	}();
-
-	exports.default = RevealStuff;
-
-/***/ },
-/* 3 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * Created by Owner on 2/29/2016.
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
-
-	var _RevealStuff = __webpack_require__(2);
-
-	var _RevealStuff2 = _interopRequireDefault(_RevealStuff);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	var CheckBoxHandler = function () {
-	    function CheckBoxHandler() {
-	        _classCallCheck(this, CheckBoxHandler);
-	    }
-
-	    _createClass(CheckBoxHandler, null, [{
-	        key: "handleCheckboxes",
-	        value: function handleCheckboxes() {
+	    }, {
+	        key: "revealCheckboxResults",
+	        value: function revealCheckboxResults() {
 	            document.getElementById("secondButton").addEventListener("click", function () {
 	                var leftChecked = document.getElementById("firstInputLeft").checked;
 	                var rightChecked = document.getElementById("firstInputRight").checked;
 	                console.log(leftChecked);
 	                console.log(rightChecked);
 	                if (leftChecked == true && rightChecked == true) {
-	                    new _RevealStuff2.default("bothDirections").revealSecondStuff("bothDirections");
+	                    document.getElementById("bothDirections").style.display = "block";
 	                } else if (leftChecked == true || rightChecked == true) {
 	                    if (leftChecked == true) {
-	                        new _RevealStuff2.default('leftDirection').revealSecondStuff("leftDirection");
+	                        document.getElementById("leftDirection").style.display = "block";
 	                    } else {
-	                        new _RevealStuff2.default("rightDirection").revealSecondStuff("rightDirection");
+	                        document.getElementById("rightDirection").style.display = "block";
 	                    }
 	                } else {
-	                    new _RevealStuff2.default("noDirection").revealSecondStuff("noDirection");
+	                    document.getElementById("noDirection").style.display = "block";
 	                }
 	            }, false);
 	        }
 	    }]);
 
-	    return CheckBoxHandler;
+	    return RevealStuff;
 	}();
 
-	exports.default = CheckBoxHandler;
+	exports.default = RevealStuff;
 
 /***/ }
 /******/ ]);

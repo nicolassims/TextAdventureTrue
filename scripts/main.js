@@ -8,14 +8,14 @@
 
 import HideStuff from './HideStuff.js';
 import RevealStuff from './RevealStuff';
-import CheckBoxHandler from './CheckBoxHandler.js';
 
 class main {
     constructor() {
         HideStuff.hideFirstStuff();
+        HideStuff.hideSecondStuff();
         HideStuff.hideBeginningStuff();
         RevealStuff.revealFirstStuff();
-        CheckBoxHandler.handleCheckboxes();
+        RevealStuff.revealCheckboxResults();
     }
 }
 

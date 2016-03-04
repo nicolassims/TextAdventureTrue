@@ -20,6 +20,7 @@ class main {
         HideStuff.hideCheckboxResults();
         RevealStuff.revealNameInput();
         AddNames.addHeroName();
+        AddNames.addLoserName();
     }
 }
 

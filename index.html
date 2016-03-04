@@ -16,7 +16,10 @@ ASSIGNMENT: Create a Text Adventure
     </head>
     <body>
         <div class="small-2 columns">
-            Put some kinda image here. Put some kinda image here. Put some kinda image here. Put some kinda image here. Put some kinda image here.
+            <div class="row">
+                < Mighty Heroes >
+            </div>
+            <div class="row" id="heroNameList"></div>
         </div>
         <div class="small-8 columns">
             <div class="row">
@@ -54,14 +57,20 @@ ASSIGNMENT: Create a Text Adventure
                     > You split into two pieces, and you guts spill across their floor, staining the granite a brilliant vermillion.
                 </div>
             </div>
-            <div class="row">
-                <div id="rightDirection">
-                    > You move further into the cave. You are promptly eaten by a Grue.
+            <div id="rightDirection">
+                <div class="row">
+                    > You move further into the cave.
+                </div>
+                <div class="row">
+                    > You are promptly eaten by a Grue.
                 </div>
             </div>
-            <div class="row">
-                <div id="leftDirection">
-                    > You move to the steel door, and discover it is unlocked. You leave the cave alive.
+            <div id="leftDirection">
+                <div class="row">
+                    > You move to the steel door, and discover it is unlocked.
+                </div>
+                <div class="row">
+                    > You leave the cave alive.
                 </div>
             </div>
             <div class="row">
@@ -73,18 +82,24 @@ ASSIGNMENT: Create a Text Adventure
             <div class="button hollow success" id="continueFromCheckboxResults">
                 > Begin
             </div>
-            <div class="row">
-                <div id="wentLeft">
-                    > Congratulations. Inscribe your name on the list of mighty heroes.
+            <div id="wentLeft">
+                <div class="row">
+                    > Congratulations.
+                </div>
+                <div class="row">
+                    > Inscribe your name on the list of mighty heroes.
                 </div>
             </div>
             <input type="text" id="heroName">
             <div class="button hollow success" id="heroButton">
                 > Begin
             </div>
-            <div class="row">
-                <div id="wentElsewhere">
-                    > Congratulations. Inscribe your name on the list of complete LOSERS.
+            <div id="wentElsewhere">
+                <div class="row">
+                    > Congratulations.
+                </div>
+                <div class="row">
+                    > Inscribe your name on the list of complete LOSERS.
                 </div>
             </div>
             <input type="text" id="loserName">
@@ -95,7 +110,10 @@ ASSIGNMENT: Create a Text Adventure
 
         </div>
         <div class="small-2 columns">
-            Put some kinda image here. Put some kinda image here. Put some kinda image here. Put some kinda image here. Put some kinda image here.
+            <div class="row">
+                < Complete Losers >
+            </div>
+            <div class="row" id="loserNameList"></div>
         </div>
         <!-- SCRIPTS -->
         <script src= "scripts/bundle.js"></script>

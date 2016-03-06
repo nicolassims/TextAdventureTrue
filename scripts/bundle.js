@@ -267,32 +267,11 @@
 	    }
 
 	    _createClass(AddNames, null, [{
-	        key: "addElement",
-	        value: function addElement() {
-	            document.getElementById("heroButton").addEventListener("click", function () {
-	                var newDiv = document.createElement("div");
-	                var heroName = "> " + document.getElementById('heroName').value;
-	                var newHeroName = document.createTextNode(heroName);
-	                newDiv.appendChild(newHeroName);
-	                var heroNameList = document.getElementById("heroNameList");
-	                document.body.insertBefore(newHeroName, heroNameList);
-	            }, false);
-
-	            document.getElementById("loserButton").addEventListener("click", function () {
-	                var newDiv = document.createElement("div");
-	                var loserName = "> " + document.getElementById('loserName').value;
-	                var newLoserName = document.createTextNode(loserName);
-	                newDiv.appendChild(newLoserName);
-	                var loserNameList = document.getElementById("loserNameList");
-	                document.body.insertBefore(newLoserName, loserNameList);
-	            }, false);
-	        }
-	    }, {
 	        key: "addHeroName",
 	        value: function addHeroName() {
 	            document.getElementById("heroButton").addEventListener("click", function () {
 	                var div = document.getElementById('heroNameList');
-	                var heroName = "> " + document.getElementById('heroName').value;
+	                var heroName = "> " + document.getElementById('heroName').value + "<br>";
 	                div.innerHTML = div.innerHTML + heroName;
 	            }, false);
 	        }
@@ -301,7 +280,7 @@
 	        value: function addLoserName() {
 	            document.getElementById("loserButton").addEventListener("click", function () {
 	                var div = document.getElementById('loserNameList');
-	                var loserName = "> " + document.getElementById('loserName').value;
+	                var loserName = "> " + document.getElementById('loserName').value + "<br>";
 	                div.innerHTML = div.innerHTML + loserName;
 	            }, false);
 	        }

@@ -3,14 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="042daa03-9632-4837-b3cc-d2304a621fd2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css.map" afterPath="$PROJECT_DIR$/css/style.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.scss" afterPath="$PROJECT_DIR$/css/style.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/AddNames.js" afterPath="$PROJECT_DIR$/scripts/AddNames.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/RevealStuff.js" afterPath="$PROJECT_DIR$/scripts/RevealStuff.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/bundle.js" afterPath="$PROJECT_DIR$/scripts/bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/main.js" afterPath="$PROJECT_DIR$/scripts/main.js" />
     </list>
     <ignored path="Text Adventure True.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -858,7 +850,7 @@
       <workItem from="1456945825756" duration="3270000" />
       <workItem from="1457032291027" duration="3313000" />
       <workItem from="1457118627396" duration="3623000" />
-      <workItem from="1457377910679" duration="3452000" />
+      <workItem from="1457377910679" duration="3479000" />
     </task>
     <task id="LOCAL-00001" summary="New initial commit">
       <created>1455821873750</created>
@@ -974,11 +966,17 @@
       <option name="project" value="LOCAL" />
       <updated>1457378479899</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="The light is in sight!">
+      <created>1457381380278</created>
+      <option name="number" value="00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1457381380278</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31702000" />
+    <option name="totallyTimeSpent" value="31729000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />

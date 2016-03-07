@@ -50,4 +50,9 @@ export default class RevealStuff {
             }
         }, false);
     }
+
+    static revealRestart() {
+        document.getElementById("beginButton").style.display = "block";
+        document.getElementById("prompt").style.display = "block";
+    }
 }

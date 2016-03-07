@@ -52,6 +52,8 @@
 
 	'use strict';
 
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 	var _HideStuff = __webpack_require__(1);
 
 	var _HideStuff2 = _interopRequireDefault(_HideStuff);
@@ -68,19 +70,37 @@
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	var main = function main() {
-	    _classCallCheck(this, main);
+	var main = function () {
+	    function main() {
+	        _classCallCheck(this, main);
 
-	    _HideStuff2.default.hideAll();
-	    _HideStuff2.default.hideIntroItems();
-	    _RevealStuff2.default.revealFirstStuff();
-	    _RevealStuff2.default.revealCheckboxResults();
-	    _HideStuff2.default.hideFirstStuff();
-	    _HideStuff2.default.hideCheckboxResults();
-	    _RevealStuff2.default.revealNameInput();
-	    _AddNames2.default.addHeroName();
-	    _AddNames2.default.addLoserName();
-	};
+	        new main.playGame();
+	    }
+
+	    _createClass(main, null, [{
+	        key: 'playGame',
+	        value: function playGame() {
+	            _HideStuff2.default.hideAll();
+	            _RevealStuff2.default.revealRestart();
+	            _HideStuff2.default.hideIntroItems();
+	            _RevealStuff2.default.revealFirstStuff();
+	            _RevealStuff2.default.revealCheckboxResults();
+	            _HideStuff2.default.hideFirstStuff();
+	            _HideStuff2.default.hideCheckboxResults();
+	            _RevealStuff2.default.revealNameInput();
+	            _AddNames2.default.addHeroName();
+	            _AddNames2.default.addLoserName();
+	            document.getElementById("loserButton").addEventListener("click", function () {
+	                return main.playGame();
+	            }, false);
+	            document.getElementById("heroButton").addEventListener("click", function () {
+	                return main.playGame();
+	            }, false);
+	        }
+	    }]);
+
+	    return main;
+	}();
 
 	window.onload = function () {
 	    new main();
@@ -236,6 +256,12 @@
 	                }
 	            }, false);
 	        }
+	    }, {
+	        key: "revealRestart",
+	        value: function revealRestart() {
+	            document.getElementById("beginButton").style.display = "block";
+	            document.getElementById("prompt").style.display = "block";
+	        }
 	    }]);
 
 	    return RevealStuff;
@@ -270,18 +296,20 @@
 	        key: "addHeroName",
 	        value: function addHeroName() {
 	            document.getElementById("heroButton").addEventListener("click", function () {
-	                var div = document.getElementById('heroNameList');
+	                var heroNameList = document.getElementById('heroNameList');
 	                var heroName = "> " + document.getElementById('heroName').value + "<br>";
-	                div.innerHTML = div.innerHTML + heroName;
+	                heroNameList.innerHTML = heroNameList.innerHTML + heroName;
+	                console.log(heroNameList.innerHTML);
 	            }, false);
 	        }
 	    }, {
 	        key: "addLoserName",
 	        value: function addLoserName() {
 	            document.getElementById("loserButton").addEventListener("click", function () {
-	                var div = document.getElementById('loserNameList');
+	                var loserNameList = document.getElementById('loserNameList');
 	                var loserName = "> " + document.getElementById('loserName').value + "<br>";
-	                div.innerHTML = div.innerHTML + loserName;
+	                loserNameList.innerHTML = loserNameList.innerHTML + loserName;
+	                console.log(loserNameList.innerHTML);
 	            }, false);
 	        }
 	    }]);

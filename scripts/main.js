@@ -12,7 +12,12 @@ import AddNames from './AddNames';
 
 class main {
     constructor() {
+        new main.playGame();
+    }
+
+    static playGame() {
         HideStuff.hideAll();
+        RevealStuff.revealRestart();
         HideStuff.hideIntroItems();
         RevealStuff.revealFirstStuff();
         RevealStuff.revealCheckboxResults();
@@ -21,6 +26,12 @@ class main {
         RevealStuff.revealNameInput();
         AddNames.addHeroName();
         AddNames.addLoserName();
+        document.getElementById("loserButton").addEventListener("click", function() {
+            return main.playGame();
+        }, false);
+        document.getElementById("heroButton").addEventListener("click", function() {
+            return main.playGame();
+        }, false);
     }
 }
 

@@ -5,17 +5,19 @@
 export default class AddNames {
     static addHeroName() {
         document.getElementById("heroButton").addEventListener("click", function() {
-            let div = document.getElementById('heroNameList');
+            let heroNameList = document.getElementById('heroNameList');
             let heroName = "> " + document.getElementById('heroName').value + "<br>";
-            div.innerHTML = div.innerHTML + heroName;
+            heroNameList.innerHTML = heroNameList.innerHTML + heroName;
+            console.log(heroNameList.innerHTML)
         }, false);
     }
 
     static addLoserName() {
         document.getElementById("loserButton").addEventListener("click", function() {
-            let div = document.getElementById('loserNameList');
+            let loserNameList = document.getElementById('loserNameList');
             let loserName = "> " + document.getElementById('loserName').value + "<br>";
-            div.innerHTML = div.innerHTML + loserName; 
+            loserNameList.innerHTML = loserNameList.innerHTML + loserName;
+            console.log(loserNameList.innerHTML)
         }, false);
     }
 }

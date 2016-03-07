@@ -41,6 +41,9 @@ body {
   font-size: 500%;
   text-align: center; }
 
+.input {
+  margin-top: 5%; }
+
 #prompt {
   margin: 5%; }
 

@@ -15,7 +15,7 @@ export default class AddNames {
         document.getElementById("loserButton").addEventListener("click", function() {
             let div = document.getElementById('loserNameList');
             let loserName = "> " + document.getElementById('loserName').value + "<br>";
-            div.innerHTML = div.innerHTML + loserName;
+            div.innerHTML = div.innerHTML + loserName; 
         }, false);
     }
 }

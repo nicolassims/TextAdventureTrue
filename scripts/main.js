@@ -12,6 +12,8 @@ import AddNames from './AddNames';
 
 class main {
     constructor() {
+        AddNames.addHeroName();
+        AddNames.addLoserName();
         new main.playGame();
     }
 
@@ -24,8 +26,6 @@ class main {
         HideStuff.hideFirstStuff();
         HideStuff.hideCheckboxResults();
         RevealStuff.revealNameInput();
-        AddNames.addHeroName();
-        AddNames.addLoserName();
         document.getElementById("loserButton").addEventListener("click", function() {
             return main.playGame();
         }, false);

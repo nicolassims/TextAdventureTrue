@@ -74,6 +74,8 @@
 	    function main() {
 	        _classCallCheck(this, main);
 
+	        _AddNames2.default.addHeroName();
+	        _AddNames2.default.addLoserName();
 	        new main.playGame();
 	    }
 
@@ -88,8 +90,6 @@
 	            _HideStuff2.default.hideFirstStuff();
 	            _HideStuff2.default.hideCheckboxResults();
 	            _RevealStuff2.default.revealNameInput();
-	            _AddNames2.default.addHeroName();
-	            _AddNames2.default.addLoserName();
 	            document.getElementById("loserButton").addEventListener("click", function () {
 	                return main.playGame();
 	            }, false);
